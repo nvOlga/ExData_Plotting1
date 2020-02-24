@@ -3,9 +3,7 @@
   setwd("/Users/useroid/Dropbox/Learnings/R/Exploratory Data Analyses/data")
   
   #Reads in data from file then subsets data for specified dates
-  powerDT <- data.table::fread(input = "household_power_consumption.txt"
-                               , na.strings="?"
-  )
+  powerDT <- data.table::fread(input = "household_power_consumption.txt", na.strings="?")
   
   # Prevents Scientific Notation
   powerDT[, Global_active_power := lapply(.SD, as.numeric), .SDcols = c("Global_active_power")]
